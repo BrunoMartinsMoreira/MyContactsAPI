@@ -5,6 +5,10 @@
   "repository": "https://github.com/BrunoMartinsMoreira/MyContactsAPI.git",
   "author": "Bruno Moreira <bruno_moreira.19@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js"
+  },
   "dependencies": {
     "express": "^4.17.2"
   },
