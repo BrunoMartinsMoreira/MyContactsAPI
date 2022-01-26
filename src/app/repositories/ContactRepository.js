@@ -34,7 +34,6 @@ let contacts = [
 ];
 
 class ContactRepository {
-  // listar todos os registros
   async findAll() {
     const rows = await db.query(`
       SELECT * FROM contacts
@@ -42,13 +41,14 @@ class ContactRepository {
     return rows;
   }
 
-  findById(id) {
-    return new Promise((resolve) => resolve(
-      contacts.find((contact) => contact.id === id),
-    ));
+  async findById(id) {
+    const row = await db.query(`
+      SELECT * FROM contacts WHERE id = $1
+    `, [id]);
+    return row;
   }
 
-  findByEmail(email) {
+  async findByEmail(email) {
     return new Promise((resolve) => resolve(
       contacts.find((contact) => contact.email === email),
     ));
