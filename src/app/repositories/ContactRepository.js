@@ -35,8 +35,11 @@ let contacts = [
 
 class ContactRepository {
   // listar todos os registros
-  findAll() {
-    return new Promise((resolve) => resolve(contacts));
+  async findAll() {
+    const rows = await db.query(`
+      SELECT * FROM contacts
+    `);
+    return rows;
   }
 
   findById(id) {
@@ -62,7 +65,7 @@ class ContactRepository {
     name, email, phone, category_id,
   }) {
     const [row] = await db.query(`
-      INSERT INTO mycontacts(name, email, phone, category_id)
+      INSERT INTO contacts(name, email, phone, category_id)
       VALUES($1, $2, $3, $4)
       RETURNING  *
       `, [name, email, phone, category_id]);
