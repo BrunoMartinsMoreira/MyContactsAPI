@@ -43,15 +43,12 @@ class ContactRepository {
   }
 
   async findById(id) {
-    const [row] = await db.query(`
-      SELECT * FROM contacts WHERE id = $1
-    `, [id]);
+    const [row] = await db.query(`SELECT * FROM contacts WHERE id = $1`, [id]);
     return row;
   }
 
   async findByEmail(email) {
-    const row = await db.query(`SELECT * FROM contacts WHERE email = $1`, [email]);
-
+    const [row] = await db.query(`SELECT * FROM contacts WHERE email = $1`, [email]);
     return row;
   }
 
@@ -62,13 +59,11 @@ class ContactRepository {
     });
   }
 
-  async create({
-    name, email, phone, category_id,
-  }) {
+  async create({ name, email, phone, category_id }) {
     const [row] = await db.query(`
       INSERT INTO contacts(name, email, phone, category_id)
       VALUES($1, $2, $3, $4)
-      RETURNING  *
+      RETURNING *
       `, [name, email, phone, category_id]);
 
     return row;

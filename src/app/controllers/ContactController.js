@@ -23,9 +23,7 @@ class ContactController {
 
   // criar um novo registro
   async store(request, response) {
-    const {
-      name, email, phone, category_id,
-    } = request.body;
+    const { name, email, phone, category_id } = request.body;
 
     if (!name) {
       return response.status(400).json({ Error: 'Name is required' });
