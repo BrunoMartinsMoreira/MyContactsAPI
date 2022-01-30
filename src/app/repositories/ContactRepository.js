@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 const db = require('../../database/index');
 
 class ContactRepository {
@@ -23,7 +22,7 @@ class ContactRepository {
   }
 
   async findByEmail(email) {
-    const [row] = await db.query(`SELECT * FROM contacts WHERE email = $1`, [email]);
+    const [row] = await db.query('SELECT * FROM contacts WHERE email = $1', [email]);
     return row;
   }
 
