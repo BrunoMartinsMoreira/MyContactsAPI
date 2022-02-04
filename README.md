@@ -8,4 +8,4 @@ Esse é um projeto pessoal desenvolvido para fins didáticos e ainda não está 
 - Express
 - Postgres
 - pg para comunicação com o banco de dados
-- Express-asyn-errors
+- Express-async-errors
