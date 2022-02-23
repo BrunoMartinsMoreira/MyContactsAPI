@@ -1,6 +1,6 @@
 ## SOBRE O PROJETO
 
-Esse é um projeto pessoal desenvolvido para fins didáticos e ainda não está finalizado, pretendo adicionar inicialmente autenticação via JWT e alguma outra feature de acordo com a evolução do meu aprendizado.
+Esse é um projeto pessoal desenvolvido para fins didáticos e ainda não está finalizado, pretendo adicionar inicialmente autenticação via JWT e alguma outra features de acordo com a evolução do meu aprendizado.
 
 ## TECNOLOGIAS UTILIZADAS
 
